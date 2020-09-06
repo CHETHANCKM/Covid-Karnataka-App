@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
@@ -9,13 +10,24 @@
             android:title="DASHBOARD" />
         <item
             android:id="@+id/nav_blog"
-            android:title="BLOG" />
+            android:title="INSIGHTS" />
+
+        <item
+            android:id="@+id/nav_circulars"
+            android:title="CIRCULARS" />
+
         <item
             android:id="@+id/nav_news"
             android:title="NEWS" />
 
         <item
+            android:id="@+id/tools"
+            android:title="TOOLS" />
+
+        <item
             android:id="@+id/nav_privacy"
-            android:title="PRIVACY POLICY" />
+            android:title="DISCLAIMER" />
+
+
     </group>
 </menu>

@@ -11,4 +11,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+  <string name="privacy">
+              The Covid-19 Karnataka application depends on the data that is available in public domain and uses of open source library tools and frameworks.
+      The content mentioned in this website belongs to their respective owners the application or the developer does not claim or guarantee that all the content on the website is up to date.
+      The application is not responsible for delay, errors in accuracy due to failure or any other circumstances. All the content and media on this website is created and published online for information purposes only. This is a non-profit project and it is not associated with any government in any way and hence never to be considered as a substitute of official data
+  </string>
 </resources>

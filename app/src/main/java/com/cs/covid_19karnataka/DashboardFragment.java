@@ -1,7 +1,6 @@
 package com.cs.covid_19karnataka;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,18 +15,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-
-import static android.content.ContentValues.TAG;
 
 
 public class DashboardFragment extends Fragment {
@@ -716,4 +708,6 @@ public class DashboardFragment extends Fragment {
       }
 
 
+    public static class NotificationFragment {
     }
+}

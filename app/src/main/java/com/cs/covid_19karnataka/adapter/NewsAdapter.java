@@ -1,6 +1,8 @@
 package com.cs.covid_19karnataka.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs.covid_19karnataka.NewsItem;
@@ -54,7 +57,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     holder.news_description.setText(description);
 
 
-    if (url!=null)
+
+    if (image!=null)
     {
         try
         {
@@ -76,7 +80,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         }
     }
 
-
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                mContext.startActivity(i);
+            }
+        });
 
 
     }
@@ -90,9 +101,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         ImageView news_image;
         TextView news_title, news_description, news_meta;
+        CardView card;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            card = itemView.findViewById(R.id.news_card);
             news_image = itemView.findViewById(R.id.news_image);
             news_title = itemView.findViewById(R.id.news_headline);
             news_description = itemView.findViewById(R.id.news_desc);

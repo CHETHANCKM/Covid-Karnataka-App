@@ -30,7 +30,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosans"
-                        android:text="Privacy Policy / Contact us"
+                        android:text="DISCLAIMER"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/colorPrimary"
                         android:textFontWeight="600"
@@ -51,32 +51,11 @@
                     android:paddingTop="10dp">
 
                     <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/notosans"
-                        android:text="Information Collection and Use"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textFontWeight="600"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/textView41"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/notosans"
-                        android:text="**We are not official"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:textColor="@color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
                         android:id="@+id/textView25"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosans"
-                        android:text="This app or webiste do not collect any data from the user, data collected / displayed in this app or website is fetched from API resources."
+                        android:text="@string/privacy"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
@@ -218,6 +197,37 @@
 
                     <TextView
                         android:id="@+id/textView39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosans"
+                        android:text="Published Year: 2020"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/notosans"
+                        android:text="Author: Rootnet"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosans"
+                        android:text="Website: https://api.rootnet.in/"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView24"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosans"

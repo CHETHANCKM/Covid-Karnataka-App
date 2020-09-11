@@ -12,4 +12,7 @@
     <color name="light_blue">#DEE4FE</color>
     <color name="light_orange">#FFEFD9</color>
     <color name="table_color">#F5F7FF</color>
+    <color name="light_grey">#D1D1D1</color>
+    <color name="green">#1e777b</color>
+    <color name="green_one">#229C22</color>
 </resources>

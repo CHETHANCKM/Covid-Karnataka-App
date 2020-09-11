@@ -1,4 +1,4 @@
-package com.cs.covid_19karnataka;
+package com.cs.covid_19karnataka.model;
 
 public class NewsItem {
     private  String title, description, url, image, publishedAt ,name;

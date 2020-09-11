@@ -13,16 +13,13 @@
             android:title="INSIGHTS" />
 
         <item
-            android:id="@+id/nav_circulars"
-            android:title="CIRCULARS" />
-
-        <item
             android:id="@+id/nav_news"
             android:title="NEWS" />
 
         <item
-            android:id="@+id/tools"
-            android:title="TOOLS" />
+            android:id="@+id/nav_circulars"
+            android:title="CIRCULARS" />
+
 
         <item
             android:id="@+id/nav_privacy"

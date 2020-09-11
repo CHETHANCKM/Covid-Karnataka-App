@@ -19,6 +19,17 @@
 
     </style>
 
+    <style name="NoActionbarThemeGreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/green</item>
+
+
+    </style>
+
+
     <style name="AppTheme.NoActionBar">
 
         <item name="windowActionBar">false</item>
@@ -33,7 +44,16 @@
 
     </style>
 
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/light_red</item>
+    </style>
 
-
+    <style name="SelectableItemBackground_Red">
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+    <style name="MyActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">#fa0</item>
+    </style>
 
 </resources>

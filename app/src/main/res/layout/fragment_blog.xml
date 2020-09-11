@@ -15,13 +15,129 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp">
+            android:paddingTop="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blog_offline_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="43dp"
+                                android:layout_height="43dp"
+                                app:srcCompat="@drawable/ic_baseline_cloud_off_24" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Offline"
+                                    android:textColor="@color/black"
+                                    android:textSize="21dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:text="Your network is not unavailable. Check your data or wifi connection"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/blog_retry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:fontFamily="@font/roboto_medium"
+                            android:paddingLeft="9dp"
+                            android:paddingTop="6dp"
+                            android:paddingRight="9dp"
+                            android:paddingBottom="6dp"
+                            android:text="RETRY"
+                            android:textColor="@color/red"
+                            android:textSize="17dp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosans"
+                        android:text="Visual Insights"
+                        android:textColor="@color/black"
+                        android:textFontWeight="600"
+                        android:textSize="18dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -43,9 +159,26 @@
 
                             <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="0.6">
+                                android:layout_height="140dp"
+                                android:layout_weight="0.6"
+                                android:padding="15dp">
 
+
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:srcCompat="@drawable/circle_red" />
+
+                                <TextView
+                                    android:id="@+id/death_percen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp" />
                             </FrameLayout>
 
                             <FrameLayout
@@ -56,7 +189,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="25dp"
                                     android:orientation="vertical">
 
                                     <TextView
@@ -66,14 +199,13 @@
                                         android:text="Fatality Rate"
                                         android:textColor="@color/black"
                                         android:textFontWeight="600"
-                                        android:textSize="18dp" />
+                                        android:textSize="14sp" />
 
                                     <TextView
                                         android:id="@+id/death_text"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/notosans"
-                                        android:text="283298 people have recovered out of total 389232 infected"
                                         android:textColor="@color/grey"
                                         android:textSize="12dp" />
                                 </LinearLayout>
@@ -92,14 +224,30 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-
                             android:weightSum="1">
 
                             <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="150dp"
-                                android:layout_weight="0.6">
+                                android:layout_height="140dp"
+                                android:layout_weight="0.6"
+                                android:padding="15dp">
 
+
+                                <ImageView
+                                    android:id="@+id/imageView8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:srcCompat="@drawable/circle_green" />
+
+                                <TextView
+                                    android:id="@+id/recovery_percen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp" />
                             </FrameLayout>
 
                             <FrameLayout
@@ -110,7 +258,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="25dp"
                                     android:orientation="vertical">
 
                                     <TextView
@@ -121,14 +269,13 @@
                                         android:text="Recovery Rate"
                                         android:textColor="@color/black"
                                         android:textFontWeight="600"
-                                        android:textSize="18dp" />
+                                        android:textSize="14sp" />
 
                                     <TextView
                                         android:id="@+id/recovery_text"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/notosans"
-                                        android:text="283298 people have recovered out of total 389232 infected"
                                         android:textColor="@color/grey"
                                         android:textSize="12dp" />
                                 </LinearLayout>
@@ -141,7 +288,9 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -152,7 +301,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosans"
-                        android:text="Symptoms of Covid-19"
+                        android:text="Common Symptoms of Covid-19"
                         android:textColor="@color/black"
                         android:textFontWeight="600"
                         android:textSize="18dp" />
@@ -161,8 +310,295 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_cough" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/textView2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Dry Cough"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:id="@+id/textView23"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="A dry cough is a cough that doesn't bring up mucus"
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_fever" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Fever"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="A Temperature that is higher than normal. Typically 98.6°F (37°C)"
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_sore" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Sore throat"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="A sore throat is a painful dry or scratchy feeling in the throat "
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_head" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Fatigue"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="You have no energy and overall feeling of tiredness"
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -179,6 +615,345 @@
                         android:textSize="18dp" />
                 </LinearLayout>
             </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingRight="13dp"
+                        android:paddingLeft="13dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:cardMaxElevation="1dp"
+                            app:contentPadding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_hand" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Wash Hands"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Clean your hands often. Use soap and water, or an alcohol-based hand rub"
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_mts" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Social Distancing"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Maintain a safe distance from anyone who is coughing or sneezing."
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_mask" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Wear Mask"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Wear a mask when physical distancing is not possible."
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_card" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Contactless Transactions"
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Make use of contactless transactions. "
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="150dp"
+                            android:layout_height="190dp"
+                            android:layout_margin="5dp"
+                            android:elevation="1dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="3dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="0dp"
+                            app:contentPadding="8dp"
+                            app:cardMaxElevation="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_margin="8dp">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@drawable/ic_temp" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="Oral temperature."
+                                            android:textColor="@color/black"
+                                            android:textFontWeight="600"
+                                            android:textSize="12dp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/notosans"
+                                            android:gravity="center"
+                                            android:text="If you have a fever, cough and difficulty breathing, seek medical attention."
+                                            android:textColor="@color/grey"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                </FrameLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </FrameLayout>
+
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

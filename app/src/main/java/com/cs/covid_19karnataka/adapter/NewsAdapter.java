@@ -8,19 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cs.covid_19karnataka.NewsItem;
+import com.cs.covid_19karnataka.model.NewsItem;
 import com.cs.covid_19karnataka.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
@@ -51,34 +53,51 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     final String published = mnewsItems.get(position).getPublishedAt();
     final String name = mnewsItems.get(position).getName();
 
-    String metadata = ""+name+" • "+published;
+    SimpleDateFormat existingUTCFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    SimpleDateFormat requiredFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm aa");
+        Date getDate = null;
+        try
+        {
+            getDate = existingUTCFormat .parse(published);
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    String mydate = requiredFormat.format(getDate);
+    String metadata = ""+name+" • "+mydate;
     holder.news_meta.setText(metadata);
     holder.news_title.setText(title);
     holder.news_description.setText(description);
 
 
 
-    if (image!=null)
+
+    if (image.equals("null"))
     {
-        try
-        {
-            Picasso.get().load(image).fetch(new Callback() {
-                @Override
-                public void onSuccess() {
-                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).into(holder.news_image);
-                }
-
-                @Override
-                public void onError(Exception e) {
-                holder.news_image.setVisibility(View.GONE);
-                }
-            });
-
-        }catch (Exception e)
-        {
-            holder.news_image.setVisibility(View.GONE);
-        }
+        holder.news_image.setVisibility(View.GONE);
     }
+    else
+        {
+            try
+            {
+                Picasso.get().load(image).fetch(new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).into(holder.news_image);
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        holder.news_image.setVisibility(View.GONE);
+                    }
+                });
+
+            }catch (Exception e)
+            {
+                holder.news_image.setVisibility(View.GONE);
+            }
+        }
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +112,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return mnewsItems.size();
     }
 

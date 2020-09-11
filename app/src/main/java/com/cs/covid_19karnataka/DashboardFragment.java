@@ -1,5 +1,8 @@
 package com.cs.covid_19karnataka;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -21,9 +25,22 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+
 
 public class DashboardFragment extends Fragment {
-    TextView t_confirmed, t_active, t_recovered, t_deceased, meta,
+    TextView retry, t_confirmed, t_active, t_recovered, t_deceased, meta,
             a1, a2, a3, a4,
             b1, b2, b3, b4,
             c1, c2, c3, c4,
@@ -55,6 +72,8 @@ public class DashboardFragment extends Fragment {
             ac1, ac2, ac3, ac4,
             ad1, ad2, ad3, ad4,
             ae1, ae2, ae3, ae4;
+    CardView offline;
+
 
     private RequestQueue requestQueue;
 
@@ -226,12 +245,39 @@ public class DashboardFragment extends Fragment {
         ae3 = v.findViewById(R.id.ae3);
         ae4 = v.findViewById(R.id.ae4);
 
+        offline = v.findViewById(R.id.dashboard_offline_card);
+        retry = v.findViewById(R.id.dashboard_retry);
+        offline.setVisibility(View.GONE);
+
         requestQueue = Volley.newRequestQueue(getContext());
 
-        totaldata();
+        checkconnection();
+
+        retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkconnection();
+            }
+        });
+
+
 
 
         return v;
+    }
+
+     private void checkconnection() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED)
+        {
+            offline.setVisibility(View.GONE);
+            totaldata();
+        }
+        else
+        {
+            offline.setVisibility(View.VISIBLE);
+        }
     }
 
     private void totaldata() {
@@ -262,8 +308,20 @@ public class DashboardFragment extends Fragment {
                             String last_updated = date.getString("last_updated");
 
 
+                            try
+                            {
+                                SimpleDateFormat existingUTCFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                                SimpleDateFormat requiredFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss aa");
+                                Date getDate = existingUTCFormat .parse(last_updated);
+                                String mydate = requiredFormat.format(getDate);
+                                meta.setText("Last updated on "+mydate);
 
-                            meta.setText(last_updated);
+                            }catch (Exception e)
+                            {
+                                meta.setText(e.getMessage());
+                            }
+
+
 
                             JSONObject a1_state = state_data.getJSONObject("Bagalkote").getJSONObject("total");
                             String a1_confirmed = a1_state.getString("confirmed");
@@ -708,6 +766,4 @@ public class DashboardFragment extends Fragment {
       }
 
 
-    public static class NotificationFragment {
-    }
 }
